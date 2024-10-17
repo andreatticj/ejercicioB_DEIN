@@ -1,35 +1,39 @@
 # Ejercicio B - Aplicación JavaFX de Gestión de Personas
 
-Este proyecto es una aplicación de escritorio desarrollada en **JavaFX** para la gestión de una lista de personas. La aplicación permite agregar nuevas personas a una tabla con información de **nombre**, **apellido**, y **edad**.
+Este proyecto es una aplicación de escritorio desarrollada en JavaFX que permite gestionar una lista de personas. Los usuarios pueden agregar personas a una tabla y recibir notificaciones sobre la entrada de datos, asegurando que se mantenga la integridad de la información.
+Características
 
-## Características
+    Interfaz Gráfica de Usuario (GUI): Utiliza JavaFX para ofrecer una interfaz atractiva y fácil de usar, permitiendo una interacción fluida.
+    Gestión de Personas: Los usuarios pueden agregar nuevas personas a la lista mediante un formulario, que incluye validaciones para asegurar datos completos y válidos.
+    Validación de Datos: La aplicación incluye un sistema de validación para verificar que los campos obligatorios no estén vacíos y que la edad sea un número válido.
+    Alertas Informativas: Se proporcionan notificaciones claras para ayudar a los usuarios a resolver errores en la entrada de datos y confirmar acciones exitosas.
 
-- Añadir personas a una tabla.
-- Verificación de datos antes de agregar (valida que los campos no estén vacíos y que la edad sea numérica).
-- Mensajes de alerta para errores y éxito.
-- Diseño de interfaz gráfico utilizando **FXML**.
-- **JavaFX Properties** para hacer binding de datos entre el modelo y la vista.
+## Requisitos
+### Para ejecutar esta aplicación, necesitarás:
 
-  ## Estructura del Proyecto
+    Java Development Kit (JDK) 11 o superior
+    JavaFX SDK (asegúrate de tener configurado el path correctamente)
+    Un IDE como IntelliJ IDEA, Eclipse o NetBeans para compilar y ejecutar el proyecto.
 
-### 1. Modelo
+## Estructura del Proyecto
 
-#### `Persona.java`
+    src/: Carpeta que contiene el código fuente de la aplicación.
+        eu/andreatt/ejerciciob_dein/application/: Contiene la clase principal HelloApplication.
+        eu/andreatt/ejerciciob_dein/controller/: Contiene el controlador HelloController para la lógica de la interfaz gráfica.
+        eu/andreatt/ejerciciob_dein/model/: Contiene la clase Persona, que define el modelo de datos.
+    resources/: Carpeta que contiene los recursos de la aplicación.
+        fxml/: Archivos FXML que definen la estructura de la interfaz gráfica.
+        images/: Iconos e imágenes utilizados en la aplicación.
 
-La clase `Persona` representa a una persona con las propiedades **nombre**, **apellido** y **edad**. Estas propiedades son observables gracias al uso de **JavaFX Properties**, lo que permite su uso en la interfaz gráfica para hacer binding con los controles de la vista.
+## Cómo Ejecutar la Aplicación
 
-### 2. Controlador
+    Clona o descarga el repositorio a tu máquina local.
+    Abre el proyecto en tu IDE y asegúrate de tener configurado el JDK y JavaFX correctamente.
+    Ejecuta la clase HelloApplication para iniciar la aplicación.
+    Interactúa con la interfaz para agregar personas a la lista.
 
-  ### HelloController.java
+## Uso de la Aplicación
 
-El controlador `HelloController` maneja la lógica de la aplicación. Es responsable de gestionar los eventos de la interfaz, como agregar una nueva persona a la tabla, verificar la validez de los datos y mostrar alertas de éxito o error.
-
-### 3. Aplicación
-
-  ### HelloApplication.java
-
-La clase `HelloApplication` es la clase principal de la aplicación que extiende de JavaFX Application. Carga el archivo FXML que define la interfaz gráfica y establece los parámetros de la ventana, como el título y el tamaño mínimo.
-
-### 4. Archivo FXML
-
-El archivo FXML `ejercicioB.fxml` define la interfaz de usuario en un GridPane con un formulario para ingresar los datos de una persona (nombre, apellido y edad) y una tabla para mostrar las personas agregadas. Incluye TextField, Label y Button, así como una TableView para listar los datos.
+    Agregar Persona: Completa los campos de nombre, apellido y edad, luego haz clic en "Agregar Persona".
+    Validación de Entradas: Si se ingresan datos incorrectos o incompletos, se mostrará una alerta con el mensaje de error correspondiente.
+    Confirmación de Éxito: Después de agregar una persona correctamente, se mostrará una notificación de éxito.
